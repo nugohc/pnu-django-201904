@@ -9,3 +9,10 @@ def item_list(request):
     return render(request, 'shop/item_list.html', {
         'item_list': qs,
     })
+
+
+def item_detail(request, pk):
+    item = Item.objects.get(pk=pk)  # 즉시 DB로부터 Fetch
+    return render(request, 'shop/item_detail.html', {
+        'item': item,
+    })
