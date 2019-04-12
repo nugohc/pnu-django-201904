@@ -1,6 +1,12 @@
 from django.db import models
 
 
+class Shop(models.Model):
+    name = models.CharField(max_length=100)
+    desc = models.TextField(blank=True)
+    address = models.CharField(max_length=50, blank=True)
+
+
 class Item(models.Model):
     name = models.CharField(max_length=100)
     desc = models.TextField()
